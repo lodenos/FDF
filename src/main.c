@@ -1,7 +1,8 @@
 #include "fdf.h"
 
 int main(int argc, char **argv) {
-  (void)argc;
-  (void)argv;
+  if (argc < 2)
+    return -1;
+  parcer_map(argv[1]);
   return 0;
 }

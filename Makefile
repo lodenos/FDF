@@ -1,16 +1,18 @@
 CC = clang
-FLAGS = -Wall -Werror -Wextra -Weverything
-INCLUDE = -I ./inc
+# FLAGS = -Wall -Werror -Wextra -Weverything -Wno-padded
+INCLUDE = -I ./inc -I ./libft/inc
 NAME = fdf.out
 OBJ = $(addsuffix .o, $(basename $(SRC)))
-SRC = $(wildcard ./src/main.c)
+SRC = \
+	./src/main.c \
+	./src/parser/parcer_map.c
 
 all: $(NAME)
 ################################################################################
 # Create Executable
 ################################################################################
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME) -L ./libft -lft
 ################################################################################
 # Compiling Source
 ################################################################################
