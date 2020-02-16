@@ -1,3 +1,4 @@
 *.o
 *.out
 libft
+SDL2-2.0.10
